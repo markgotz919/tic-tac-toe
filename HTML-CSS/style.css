@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+  color: red;
+}
+
+nav {
+  padding: 36px;
+  line-height: 30px;
+}
+
+a.navbuttons {
+  padding: 15px;
+}

@@ -12,17 +12,37 @@ const playerTwo = "O"
 
 $(() => {
 
+  function click() {
+    if (this.id == "boxZero") {
+      document.getElementById("boxZero").innerHTML = "X";
+    } else if (this.id == "boxOne") {
+      document.getElementById("boxOne").innerHTML = "X";
+    } else if (this.id == "boxTwo") {
+      document.getElementById("boxTwo").innerHTML = "X";
 
+    } else if (this.id == "boxThree") {
+      document.getElementById("boxThree").innerHTML = "X";
+    } else if (this.id == "boxFour") {
+      document.getElementById("boxFour").innerHTML = "X";
+    } else if (this.id == "boxFive") {
+      document.getElementById("boxFive").innerHTML = "X";
 
-  $("#boxZero").click(function () {
-    $('#boxZero').html("X")
-  });
-  $("#boxOne").click(function () {
-    $('#boxOne').html("X")
-  });
-  $("#boxTwo").click(function () {
-    $('#boxTwo').html("O")
-  });
-
+    } else if (this.id == "boxSix") {
+      document.getElementById("boxSix").innerHTML = "X";
+    } else if (this.id == "boxSeven") {
+      document.getElementById("boxSeven").innerHTML = "X";
+    } else if (this.id == "boxEight") {
+      document.getElementById("boxEight").innerHTML = "X";
+    }
+  }
+  document.getElementById("boxZero").onclick = click;
+  document.getElementById("boxOne").onclick = click;
+  document.getElementById("boxTwo").onclick = click;
+  document.getElementById("boxThree").onclick = click;
+  document.getElementById("boxFour").onclick = click;
+  document.getElementById("boxFive").onclick = click;
+  document.getElementById("boxSix").onclick = click;
+  document.getElementById("boxSeven").onclick = click;
+  document.getElementById("boxEight").onclick = click;
 
 });

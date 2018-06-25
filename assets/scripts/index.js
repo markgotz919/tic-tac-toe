@@ -7,19 +7,22 @@
 // require('./example')
 
 //equiv of $(document).ready() in jQuery
-$(() => {
-  const player = "X"
+const playerOne = "X"
+const playerTwo = "O"
 
-	//ONCE per page load only
-	document.addEventListener("DOMContentLoaded", function () {
-	  var boxes = document.querySelectorAll("main button");
-	  for (let i = 0; i < boxes.length; i++) {
-	    boxes[i].addEventListener("click", playerTurn);
-	  }
-	  document.querySelector("header button").addEventListener("click", newGame);
-  })
-  
-  function playerTurn(){
-    boxes.style.backgroundColor = "yellow"
-  }
-})
+$(() => {
+
+  /*document.getElementsByClassName("cell").addEventListener("click", playGameFunction)
+
+  function playGameFunction() {
+    document.getElementById("boxZero").innerHTML = playerOne;
+	}
+	*/
+  $("button").click(function () {
+    //console.log("5")
+    $('#boxZero').html("X")
+  });
+
+
+
+});

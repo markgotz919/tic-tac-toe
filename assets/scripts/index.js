@@ -12,17 +12,17 @@ const playerTwo = "O"
 
 $(() => {
 
-  /*document.getElementsByClassName("cell").addEventListener("click", playGameFunction)
 
-  function playGameFunction() {
-    document.getElementById("boxZero").innerHTML = playerOne;
-	}
-	*/
-  $("button").click(function () {
-    //console.log("5")
+
+  $("#boxZero").click(function () {
     $('#boxZero').html("X")
   });
-
+  $("#boxOne").click(function () {
+    $('#boxOne').html("X")
+  });
+  $("#boxTwo").click(function () {
+    $('#boxTwo').html("O")
+  });
 
 
 });

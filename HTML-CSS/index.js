@@ -1,31 +1,23 @@
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
+	const player = "X"
 
-// use require without a reference to ensure a file is bundled
-// require('./example')
 
-// your JS code goes here 
-let origBoard = []
-const player1 = "O"
-const player2 = "X"
+	//ONCE per page load only
+	document.addEventListener("DOMContentLoaded", function () {
+	  //equiv of $(document).ready() in jQuery
+	  var boxes = document.querySelectorAll("main button");
+	  for (let i = 0; i < boxes.length; i++) {
+	    boxes[i].addEventListener("click", playerTurn);
+	  }
+	  document.querySelector("header button").addEventListener("click", newGame);
+        })
+        
+        function playerTurn(){
+                boxes.style.backgroundColor = "yellow"
 
-const cells = document.querySelectorAll('.cell')
-startGame();
 
-function startGame() {
-  document.querySelector(".endgame").style.display = "none"
-  origBoard = Array.from(Array(9).keys())
-  for (let i = 0; i < cells.length; i++) {
-    cells[i].innerText = ""
-    cells[i].addEventListener('click', turnClick, false)
-  }
-}
 
-function turnClick(square) {
-  turn(square.target.id, player1)
+        }
+
 
 }
-
-function turn(squareID, player1) {
-  origBoard[squareID = player1 document.getElementById(elementId).innerText = player1
-  }
+	

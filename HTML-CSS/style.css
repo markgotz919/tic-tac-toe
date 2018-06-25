@@ -50,6 +50,12 @@ table tr td:last-child {
 }
 
 .playbutton {
-  font-size: 100px;
+  font-size: 50px;
   padding: 100px 200px;
+}
+
+button {
+  height: 300px;
+  width: 300px;
+  font-size: 100px;
 }

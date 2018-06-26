@@ -6,16 +6,57 @@
 //$grey: rgb(128, 128, 128);
 //$teal: rgb(0, 156, 161);
 //$black: #000;
+header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  margin-bottom: 50px;
+}
 
-header { padding-bottom: 10px; border-bottom: 1px solid black; margin-bottom: 50px; }
-main { position: relative; background-color: black; }
-main button { position: absolute; width: 100px; height: 100px; box-sizing: border-box; font-size: 3em; font-weight: bold; }
-main button.top { top: 0; }
-main button.middle { top: 105px; }
-main button.bottom { top: 210px; }
-main button.left { left: 0; }
-main button.center { left: 105px; }
-main button.right { left: 210px; }
-  footer{
-    margin-top: 375px;   
-  }
+main {
+  position: relative;
+  background-color: black;
+}
+
+main button {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+main button.top {
+  top: 0;
+}
+
+main button.middle {
+  top: 105px;
+}
+
+main button.bottom {
+  top: 210px;
+}
+
+main button.left {
+  left: 0;
+}
+
+main button.center {
+  left: 105px;
+}
+
+main button.right {
+  left: 210px;
+}
+
+h3 {
+  position: relative;
+  top: 350px;
+}
+
+.sign-up {
+  position: sticky;
+  width: 50%;
+  bottom:3000px;
+}

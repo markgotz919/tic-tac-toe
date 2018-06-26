@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  
   <header>
     <h1> Tic-Tac-Toe</h1>
     <button>New Game</button>
@@ -30,10 +31,39 @@
     <button class="bottom center"></button>
     <button class="bottom right"></button>
   </main>
-  <br <footer>
-  <h3></h3>
 
-  </footer>
+
+
+<form id="sign-up" class="border">
+<fieldset>
+  <legend>Sign up!</legend>
+  <input type="text" name="credentials[email]" placeholder="Email">
+  <input type="password" name="credentials[password]" placeholder="Password">
+  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+  <input type="submit" value="Sign up!">
+</fieldset>
+
+<form id="sign-in" class="border">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <input type="text" name="credentials[email]" placeholder="Email">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <input type="submit" value="Sign in!">
+    </fieldset>
+  </form>
+
+  <form id="sign-out" class="border">
+    <fieldset>
+      <legend>Sign Out!</legend>
+      <input type="submit" value="Sign Out!">
+    </fieldset>
+  </form>
+
+
+
+
+  <h3></h3>
+  
 </body>
 
 </html>

@@ -59,3 +59,11 @@ button {
   width: 300px;
   font-size: 100px;
 }
+
+.modal-content{
+    height: 50px;
+    length: 50px;
+    border-style: solid;
+    border: 5px;
+    font-size: 200px;
+}

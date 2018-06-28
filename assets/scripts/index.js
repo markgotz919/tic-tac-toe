@@ -12,12 +12,12 @@ $(() => {
 
 })
 
-
-//global variable
 var player = "X",
   gameOver = false,
   xWins = 0,
-  oWins = 0;
+  oWins = 0,
+  numTies = 0,
+  numMoves = 0;
 
 
 
@@ -28,8 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var boxes = document.querySelectorAll("main button");
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", playerTurn);
+
   }
   document.querySelector("header button").addEventListener("click", newGame);
+  console.log(i)
 });
 
 function newGame() {
@@ -39,6 +41,8 @@ function newGame() {
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].textContent = "";
   }
+  //set number of moves to 0
+  numMoves = 0;
   //set starting player to X
   player = "X";
   //game on
@@ -54,7 +58,7 @@ function message(text = "") {
 
 function displayScore() {
   var h3 = document.querySelector("h3");
-  h3.textContent = "X wins: " + xWins + " O wins: " + oWins;
+  h3.textContent = "X wins: " + xWins + "      ----            O wins: " + oWins + "      ----            Number of ties: " + numTies
 
 }
 
@@ -84,6 +88,14 @@ function playerTurn(e) {
     return;
   }
   //game still going? switch players
+  numMoves++;
+  if (numMoves === 9) {
+    gameOver = true;
+    message("It's a Tie!");
+    numTies++;
+    displayScore();
+    return;
+  }
   changePlayers();
 }
 

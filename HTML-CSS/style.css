@@ -67,3 +67,8 @@ button {
     border: 5px;
     font-size: 200px;
 }
+
+h2 {background-color: yellow;
+        height: 75px;
+        width: 300px;
+      }

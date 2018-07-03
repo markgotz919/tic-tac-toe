@@ -60,15 +60,24 @@ button {
   font-size: 100px;
 }
 
-.modal-content{
-    height: 50px;
-    length: 50px;
-    border-style: solid;
-    border: 5px;
-    font-size: 200px;
+.modal-content {
+  height: 50px;
+  length: 50px;
+  border-style: solid;
+  border: 5px;
+  font-size: 200px;
 }
 
-h2 {background-color: yellow;
-        height: 75px;
-        width: 300px;
-      }
+h2 {
+  background-color: yellow;
+  height: 75px;
+  width: 300px;
+}
+
+.formText {
+  font-size: 18px;
+}
+
+.border {
+  height: 24px;
+}

@@ -6,6 +6,25 @@
 //$grey: rgb(128, 128, 128);
 //$teal: rgb(0, 156, 161);
 //$black: #000;
+h1 {
+  color: red;
+  text-align-last: center;
+}
+
+/*new game button */
+
+#newGame {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 30px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+}
+
 header {
   padding-bottom: 10px;
   border-bottom: 1px solid black;
@@ -15,6 +34,7 @@ header {
 main {
   position: relative;
   background-color: black;
+  top: 300px;
 }
 
 main button {
@@ -53,9 +73,7 @@ main button.right {
 
 /*h3 displays the scores of the games */
 
-h3 {
- 
-}
+h3 {}
 
 /*h2 displays the game message - win, tie, etc.*/
 
@@ -79,4 +97,12 @@ h2 {
 
 .border {
   width: 25%;
+  border: 3px solid #000;
+  margin: 20px;
+  padding: 20px;
+}
+
+#message {
+
+  padding: 30px 60px;
 }

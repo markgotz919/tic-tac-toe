@@ -6,6 +6,10 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+const store = require('./store')
+
+const gameApi = require("./games/api-game")
+
 const authEvents = require('./auth/events.js')
 $(() => {
   authEvents.addHandlers()
@@ -40,7 +44,23 @@ function newGame() {
   var boxes = document.querySelectorAll("main button");
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].textContent = "";
+
   }
+  //add the function to create game object
+  gameApi.create()
+    .then(function (response) {
+      console.log('response is', response)
+      store.game = response.game
+    })
+    .then(function () {
+      console.log("store is", store)
+    })
+    .catch(function (error) {
+      console.log('error is',
+        error)
+    })
+
+
   //set number of moves to 0
   numMoves = 0;
   //set starting player to X

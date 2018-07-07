@@ -15,6 +15,11 @@ header {
 main {
   position: relative;
   background-color: black;
+  display: none;
+}
+
+main.ready {
+  display: block;
 }
 
 main button {
@@ -53,9 +58,7 @@ main button.right {
 
 /*h3 displays the scores of the games */
 
-h3 {
- 
-}
+h3 {}
 
 /*h2 displays the game message - win, tie, etc.*/
 
@@ -63,6 +66,17 @@ h2 {
   background-color: yellow;
   height: 75px;
   width: 300px;
+}
+
+#new-game {
+  height: 75px;
+  width: 200px;
+  font-size: 28px;
+  display: none;
+}
+
+#new-game.ready {
+  display: block;
 }
 
 .sign-up {

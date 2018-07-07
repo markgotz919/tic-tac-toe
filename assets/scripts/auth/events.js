@@ -13,6 +13,7 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
+  this.reset()
 }
 
 const onSignIn = function (event) {
@@ -23,6 +24,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+  this.reset()
 }
 
 const onSignOut = function (event) {
@@ -42,6 +44,7 @@ const onChangePassword = function (event) {
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
+  this.reset()
 }
 
 const addHandlers = () => {

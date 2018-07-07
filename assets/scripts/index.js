@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
   document.querySelector("header button").addEventListener("click", newGame);
-  console.log(i)
 });
 
 function newGame() {
@@ -46,6 +45,7 @@ function newGame() {
     boxes[i].textContent = "";
 
   }
+  $('main').addClass("ready");
   //add the function to create game object
   gameApi.create()
     .then(function (response) {
@@ -105,6 +105,8 @@ function playerTurn(e) {
       oWins++;
     }
     displayScore();
+    store.game.over = true;
+    saveGameState();
     return;
   }
   //game still going? switch players
@@ -114,9 +116,27 @@ function playerTurn(e) {
     message("It's a Tie!");
     numTies++;
     displayScore();
+    store.game.over = true;
+    saveGameState();
     return;
   }
+  saveGameState();
   changePlayers();
+}
+
+function saveGameState() {
+  //update cells
+  var cells = [];
+  var boxes = document.querySelectorAll("main button");
+  for (let i = 0; i < boxes.length; i++) {
+    cells.push(boxes[i].textContent);
+
+  }
+  store.game.cells = cells;
+  console.log(store.game);
+  //patch to database
+
+
 }
 
 function changePlayers() {

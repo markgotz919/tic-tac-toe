@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     boxes[i].addEventListener("click", playerTurn);
 
   }
-  document.querySelector("header button").addEventListener("click", newGame);
+  document.querySelector("#new-game").addEventListener("click", newGame);
+  document.querySelector("#get-games").addEventListener("click", getGames);
 });
 
 function newGame() {
@@ -135,6 +136,7 @@ function saveGameState() {
   store.game.cells = cells;
   console.log(store.game);
   //patch to database
+  gameApi.update(store.game);
 
 
 }
@@ -166,4 +168,12 @@ function winner() {
   if (boxes[2].textContent.length && boxes[2].textContent === boxes[4].textContent && boxes[4].textContent === boxes[6].textContent) return true;
   //no winner
   return false;
+}
+
+function getGames() {
+  gameApi.getGames().then(function (data) {
+    console.log(data)
+  })
+
+
 }

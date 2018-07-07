@@ -20,6 +20,7 @@ const signInSuccess = function (data) {
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
   $("#new-game").addClass("ready")
+  $("#get-games").addClass("ready")
 }
 
 const signInFailure = function (error) {
@@ -34,6 +35,8 @@ const signOutSuccess = function () {
   console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
   $('main').removeClass("ready")
+  $("#new-game").removeClass("ready")
+  $("#get-games").removeClass("ready")
 }
 
 const signOutFailure = function (error) {

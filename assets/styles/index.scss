@@ -68,14 +68,16 @@ h2 {
   width: 300px;
 }
 
-#new-game {
+#new-game,
+#get-games {
   height: 75px;
   width: 200px;
   font-size: 28px;
   display: none;
 }
 
-#new-game.ready {
+#new-game.ready,
+#get-games.ready {
   display: block;
 }
 

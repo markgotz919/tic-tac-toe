@@ -136,7 +136,7 @@ function saveGameState() {
   store.game.cells = cells;
   console.log(store.game);
   //patch to database
-  gameApi.update(store.game);
+  gameApi.update(store.game.cells);
 
 
 }

@@ -10,6 +10,8 @@ const store = require('./store')
 
 const gameApi = require("./games/api-game")
 
+const ui = require('./games/ui-game')
+
 const authEvents = require('./auth/events.js')
 $(() => {
   authEvents.addHandlers()
@@ -84,6 +86,7 @@ function displayScore() {
 }
 
 function playerTurn(e) {
+  var classArray = ["top left", "top center", "top right", "middle left", "middle center", "middle right", "bottom left", "bottom center", "bottom right"];
   console.log(e);
   //e is the event object
   //e.target is the button just clicked on
@@ -92,7 +95,7 @@ function playerTurn(e) {
     message("illegal move");
     return;
   }
-
+  var index = classArray.indexOf(e.target.className);
   //insert the player ("X" or "O") into the button
   e.target.textContent = player;
   //check for a win or tie condition
@@ -106,8 +109,7 @@ function playerTurn(e) {
       oWins++;
     }
     displayScore();
-    store.game.over = true;
-    saveGameState();
+    saveGameState(index, player, gameOver);
     return;
   }
   //game still going? switch players
@@ -117,26 +119,29 @@ function playerTurn(e) {
     message("It's a Tie!");
     numTies++;
     displayScore();
-    store.game.over = true;
-    saveGameState();
+
+    saveGameState(index, player, gameOver);
     return;
   }
-  saveGameState();
+  saveGameState(index, player, gameOver);
   changePlayers();
 }
 
-function saveGameState() {
-  //update cells
-  var cells = [];
-  var boxes = document.querySelectorAll("main button");
-  for (let i = 0; i < boxes.length; i++) {
-    cells.push(boxes[i].textContent);
-
-  }
-  store.game.cells = cells;
-  console.log(store.game);
+function saveGameState(index, player, gameOver) {
+  //build turn object
+  var data = `{
+    "game": {
+      "cell": {
+        "index": ${index},
+        "value": "${player}"
+      },
+      "over": ${gameOver}
+    }
+  }`;
   //patch to database
-  gameApi.update(store.game.cells);
+  gameApi.update(JSON.parse(data))
+    .then(ui.updateSuccess)
+    .catch(ui.updateFailure);
 
 
 }

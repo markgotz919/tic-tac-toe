@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <h1> Tic-Tac-Toe</h1>
+    <button id="new-game">New Game</button>
+    <button id="get-games">Get Games</button>
+
+    <h2></h2>
+    <p id="message"></p>
+
+    <h3></h3>
+  </header>
+
+
+
+  <!--
+  <div>
+  <!--MODAL BEGINS-->
+  <!-- Large modal -->
+  <!--
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div> </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+  <!--MODAL ENDS-->
+
+  <main>
+    <button class="top left"></button>
+    <button class="top center"></button>
+    <button class="top right"></button>
+    <button class="middle left"></button>
+    <button class="middle center"></button>
+    <button class="middle right"></button>
+    <button class="bottom left"></button>
+    <button class="bottom center"></button>
+    <button class="bottom right"></button>
+  </main>
+
+
+
+
+  <form id="sign-up" class="border">
+    <fieldset>
+      <legend>Sign up!</legend>
+      <input type="text" name="credentials[email]" placeholder="Email">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+      <input type="submit" value="Sign up!">
+    </fieldset>
+  </form>
+  <form id="sign-in" class="border">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <input type="text" name="credentials[email]" placeholder="Email">
+      <input type="password" name="credentials[password]" placeholder="Password">
+      <input type="submit" value="Sign in!">
+    </fieldset>
+  </form>
+
+  <form id="change-password" class="border">
+    <fieldset>
+      <legend>Change Password!</legend>
+      <input type="password" name="passwords[old]" placeholder="Old Password">
+      <input type="password" name="passwords[new]" placeholder="New Password">
+      <input type="submit" value="Change Password!">
+    </fieldset>
+  </form>
+
+  <form id="sign-out" class="border">
+    <fieldset>
+      <legend>Sign Out!</legend>
+      <input type="submit" value="Sign Out!">
+    </fieldset>
+  </form>
+
+
+  <h3 id="allScores"></h3>
+
+</body>
+
+</html>

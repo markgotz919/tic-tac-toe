@@ -129,17 +129,17 @@ function playerTurn(e) {
 
 function saveGameState(index, player, gameOver) {
   //build turn object
-  var data = `{
+  var data = {
     "game": {
       "cell": {
-        "index": ${index},
-        "value": "${player}"
+        "index": index,
+        "value": player
       },
-      "over": ${gameOver}
+      "over": gameOver
     }
-  }`;
+  };
   //patch to database
-  gameApi.update(JSON.parse(data))
+  gameApi.update(data)
     .then(ui.updateSuccess)
     .catch(ui.updateFailure);
 
@@ -177,7 +177,13 @@ function winner() {
 
 function getGames() {
   gameApi.getGames().then(function (data) {
-    console.log(data)
+    var allScores = document.querySelector("#allScores");
+    var html = "<ol>";
+    for (let i = 0; i < data.games.length; i++) {
+      html += "<li>" + JSON.stringify(data.games[i]) + "</li>";
+    }
+    html += "</ol>";
+    allScores.innerHTML = html;
   })
 
 

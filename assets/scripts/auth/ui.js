@@ -37,6 +37,8 @@ const signOutSuccess = function () {
   $('main').removeClass("ready")
   $("#new-game").removeClass("ready")
   $("#get-games").removeClass("ready")
+  $("header h3").empty();
+  $("#allScores").empty();
 }
 
 const signOutFailure = function (error) {

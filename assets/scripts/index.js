@@ -52,15 +52,14 @@ function newGame() {
   //add the function to create game object
   gameApi.create()
     .then(function (response) {
-      console.log('response is', response)
+     
       store.game = response.game
     })
     .then(function () {
-      console.log("store is", store)
+      
     })
     .catch(function (error) {
-      console.log('error is',
-        error)
+      
     })
 
 
@@ -87,7 +86,7 @@ function displayScore() {
 
 function playerTurn(e) {
   var classArray = ["top left", "top center", "top right", "middle left", "middle center", "middle right", "bottom left", "bottom center", "bottom right"];
-  console.log(e);
+  
   //e is the event object
   //e.target is the button just clicked on
   //make sure button hasn't already been used this game

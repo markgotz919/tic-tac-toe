@@ -2,7 +2,7 @@ const config = require("../config")
 const store = require("../store")
 
 const create = function (data) {
-  console.log("object created")
+ 
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -15,7 +15,7 @@ const create = function (data) {
 }
 
 const update = function (data) {
-  console.log('data is ', data)
+ 
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.id,
     method: 'PATCH',
@@ -28,7 +28,7 @@ const update = function (data) {
 }
 
 const getGames = function (data) {
-  console.log('data is ', data)
+  
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
